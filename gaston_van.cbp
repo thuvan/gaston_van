@@ -11,7 +11,7 @@
 				<Option object_output="obj/Debug/" />
 				<Option type="1" />
 				<Option compiler="gcc" />
-				<Option parameters="-m 7 -p Chemical_340 -t Chemical_340.out" />
+				<Option parameters="7 Chemical_340 Chemical_340.out" />
 				<Compiler>
 					<Add option="-g" />
 				</Compiler>

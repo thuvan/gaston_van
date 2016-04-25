@@ -75,12 +75,20 @@ main ( int argc, char *argv[] ) {
     return 1;
   }
 
-  minfreq = atoi ( argv[optind] );
+  char* datafile="dataset\\database_size10_v5_vMin4_vMax5_seed3571_win.txt";
+  char* out_file_name = "dataset\\database_size10_v5_vMin4_vMax5_seed3571.txt.GASTON.output";
+//  char* datafile="Chemical_340.txt";
+//  char* out_file_name = "Chemical_340.txt.GASTON.output";
+
+  //minfreq = atoi ( argv[optind] );
+  minfreq = 4;
   cerr << "Read" << endl;
-  FILE *input = fopen ( argv[optind+1], "r" );
+  //FILE *input = fopen ( argv[optind+1], "r" );
+  FILE *input = fopen (datafile, "r" );
   if ( argc - optind == 3 ) {
     dooutput = true;
-    output = fopen ( argv[optind+2], "w" );
+    //output = fopen ( argv[optind+2], "w" );
+    output = fopen ( out_file_name, "w" );
   }
 
   cout << "debug 4"<<endl;
@@ -119,4 +127,5 @@ main ( int argc, char *argv[] ) {
   cout << "Approximate total runtime: " << ( (float) t2 - t1 ) / CLOCKS_PER_SEC << "s" << endl;
   if ( argc - optind == 3 )
     fclose ( output );
+  getchar();
 }
